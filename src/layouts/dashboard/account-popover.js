@@ -14,7 +14,7 @@ const [userRole, setUserRole] = useState(null); // Initialize with null or a def
 
   useEffect(() => {
     // Fetch data from your backend API
-    fetch('http://localhost:8000/check_HOS', {
+    fetch('http://3.89.137.230:8000/check_HOS', {
       method: 'POST',
       body: JSON.stringify({ /* any data to send */ }),
       headers: {

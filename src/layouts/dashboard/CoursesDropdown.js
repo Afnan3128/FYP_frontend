@@ -33,7 +33,7 @@ const CoursesDropdown = () => {
 
   const fetchData = async () => {
     try {
-      const instructorResponse = await axios.post('http://localhost:8000/getcourses', {
+      const instructorResponse = await axios.post('http://3.89.137.230:8000/getcourses', {
         selectedInstructor,
         selectedFrom,
         selectedTo
@@ -47,7 +47,7 @@ const CoursesDropdown = () => {
         handleCourseSelection({ target: { value: '' } }); // Passing an empty event to reset the selection
     // try {
     //   // Send the selected instructor to the server
-    //   const response = await axios.post('http://localhost:8000/getcourses', {
+    //   const response = await axios.post('http://3.89.137.230:8000/getcourses', {
     //     selectedInstructor: newSelectedInstructor,
     //   });
 
@@ -61,7 +61,7 @@ const CoursesDropdown = () => {
     // handleCoursesChange(selectedCourse); // Call the function to handle course change
     try {
       // Send the selected course to the server
-      await axios.post('http://localhost:8000/setcourse', {
+      await axios.post('http://3.89.137.230:8000/setcourse', {
         selectedCourse,
       });
     } catch (error) {

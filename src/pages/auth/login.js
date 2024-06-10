@@ -208,7 +208,7 @@ const Page = () => {
         const password = values.password;
         await auth.signIn('demo@devias.io', 'Password123!');
         
-        const response = await axios.post('http://localhost:8000/api/signin/', { username, password });
+        const response = await axios.post('http://3.89.137.230:8000/api/signin/', { username, password });
         const data = response.data;
         if (data.role) {
           const userRole = data.role;

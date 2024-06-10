@@ -49,7 +49,7 @@ export const OverviewLatestProducts = (props) => {
   const handleCatChange = async (selectedCategory) => {
     
     try {
-      const apiResponse = await axios.post('http://localhost:8000/setCategory', {
+      const apiResponse = await axios.post('http://3.89.137.230:8000/setCategory', {
         selectedCategory,
       });
       // Handle the response as needed

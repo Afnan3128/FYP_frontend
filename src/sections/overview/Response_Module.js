@@ -34,7 +34,7 @@ const ResponseModule = () => {
 
   const handleSubmit = async () => {
     try {
-      await axios.post('http://localhost:8000/category_wise', {
+      await axios.post('http://3.89.137.230:8000/category_wise', {
         response: responseText,
       });
       // Clear the response text field after successful submission
@@ -46,7 +46,7 @@ const ResponseModule = () => {
 
   const checkResponseFromBackend = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/check_same_logged');
+      const response = await axios.get('http://3.89.137.230:8000/check_same_logged');
       const shouldDisplay = response.data.value;
       console.log("shouldDisplay:",shouldDisplay)
       if (shouldDisplay== true) {

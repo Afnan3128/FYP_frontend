@@ -66,11 +66,11 @@ import { useToContext } from 'src/layouts/dashboard/ToContext.js';
 //   useEffect(() => {
 //     // Fetch data only when instructorSelected, courseSelected, or sectionSelected changes
 //     if (selectedInstructor || selectedCourses || selectedSection) {
-//       fetchData('http://localhost:8000/registeredstudents').then((value) => setTotalCustomersData(value));
-//       fetchData('http://localhost:8000/feedbacksrec').then((value) => setTasksProgressData(value));
-//       fetchData('http://localhost:8000/constcomment').then((value) => setBudgetData(value));
-//       fetchData('http://localhost:8000/negcom').then((value) => setTotalProfitData(value));
-//       fetchDataa('http://localhost:8000/commentscategorywise').then((data) => {
+//       fetchData('http://3.89.137.230:8000/registeredstudents').then((value) => setTotalCustomersData(value));
+//       fetchData('http://3.89.137.230:8000/feedbacksrec').then((value) => setTasksProgressData(value));
+//       fetchData('http://3.89.137.230:8000/constcomment').then((value) => setBudgetData(value));
+//       fetchData('http://3.89.137.230:8000/negcom').then((value) => setTotalProfitData(value));
+//       fetchDataa('http://3.89.137.230:8000/commentscategorywise').then((data) => {
 //         if (data) {
 //           setChartData({
 //             positive: data.positive || [],
@@ -78,7 +78,7 @@ import { useToContext } from 'src/layouts/dashboard/ToContext.js';
 //           });
 //         }
 //       });
-//       fetchDataa('http://localhost:8000/course_analysis').then((data) => {
+//       fetchDataa('http://3.89.137.230:8000/course_analysis').then((data) => {
 //         if (data) {
 //           setChartData1({
 //             positive: data.positive || [],
@@ -87,7 +87,7 @@ import { useToContext } from 'src/layouts/dashboard/ToContext.js';
 //           });
 //         }
 //       });
-//       fetchDataa('http://localhost:8000/years_of_teacher').then((data) => {
+//       fetchDataa('http://3.89.137.230:8000/years_of_teacher').then((data) => {
 //         if (data) {
 //           setChartData2({
 //             positive: data.positive || [],
@@ -167,15 +167,15 @@ const Index = () => {
     // Handle the submission of the response here, e.g., send it to the server
   };
   useEffect(() => {
-    fetchData('http://localhost:8000/registeredstudents').then((value) => 
+    fetchData('http://3.89.137.230:8000/registeredstudents').then((value) => 
     {setTotalCustomersData(value);
       console.log('Total Profit Data:', value); // Log the total profit data
     });
-    fetchData('http://localhost:8000/feedbacksrec').then((value) => 
+    fetchData('http://3.89.137.230:8000/feedbacksrec').then((value) => 
     {setTasksProgressData(value);
       console.log('Total Profit Data:', value);});
-    fetchData('http://localhost:8000/constcomment').then((value) => setBudgetData(value));
-    fetchData('http://localhost:8000/negcom').then((value) => {
+    fetchData('http://3.89.137.230:8000/constcomment').then((value) => setBudgetData(value));
+    fetchData('http://3.89.137.230:8000/negcom').then((value) => {
       setTotalProfitData(value);
       console.log('Total Profit Data:', value); // Log the total profit data
     });
@@ -185,51 +185,51 @@ const Index = () => {
   useEffect(() => {
     const fetchDataForInstructor = async () => {
       if (selectedInstructor) {
-        const data = await fetchData1('http://localhost:8000/registeredstudents', { selectedInstructor });
+        const data = await fetchData1('http://3.89.137.230:8000/registeredstudents', { selectedInstructor });
         setTotalCustomersData(data.value);
-        const data1 = await fetchData1('http://localhost:8000/feedbacksrec', { selectedInstructor });
+        const data1 = await fetchData1('http://3.89.137.230:8000/feedbacksrec', { selectedInstructor });
         setTasksProgressData(data1.value);
-        const data2 = await fetchData1('http://localhost:8000/constcomment', { selectedInstructor });
+        const data2 = await fetchData1('http://3.89.137.230:8000/constcomment', { selectedInstructor });
         setBudgetData(data2.value);
-        const data3 = await fetchData1('http://localhost:8000/negcom', { selectedInstructor });
+        const data3 = await fetchData1('http://3.89.137.230:8000/negcom', { selectedInstructor });
         setTotalProfitData(data3.value);
       } 
     };
   
     const fetchDataForCourses = async () => {
       if (selectedInstructor && selectedCourses) {
-        const data = await fetchData1('http://localhost:8000/registeredstudents', { selectedInstructor, selectedCourses });
+        const data = await fetchData1('http://3.89.137.230:8000/registeredstudents', { selectedInstructor, selectedCourses });
         setTotalCustomersData(data.value);
-        const data1 = await fetchData1('http://localhost:8000/feedbacksrec', { selectedInstructor, selectedCourses });
+        const data1 = await fetchData1('http://3.89.137.230:8000/feedbacksrec', { selectedInstructor, selectedCourses });
         setTasksProgressData(data1.value);
-        const data2 = await fetchData1('http://localhost:8000/constcomment', { selectedInstructor, selectedCourses });
+        const data2 = await fetchData1('http://3.89.137.230:8000/constcomment', { selectedInstructor, selectedCourses });
         setBudgetData(data2.value);
-        const data3 = await fetchData1('http://localhost:8000/negcom', { selectedInstructor, selectedCourses });
+        const data3 = await fetchData1('http://3.89.137.230:8000/negcom', { selectedInstructor, selectedCourses });
         setTotalProfitData(data3.value);
       } 
     };
   
     const fetchDataForFromTo = async () => {
       if (selectedInstructor && selectedCourses && selectedFrom && selectedTo) {
-        const data = await fetchData1('http://localhost:8000/registeredstudents', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
+        const data = await fetchData1('http://3.89.137.230:8000/registeredstudents', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
         setTotalCustomersData(data.value);
-        const data1 = await fetchData1('http://localhost:8000/feedbacksrec', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
+        const data1 = await fetchData1('http://3.89.137.230:8000/feedbacksrec', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
         setTasksProgressData(data1.value);
-        const data2 = await fetchData1('http://localhost:8000/constcomment', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
+        const data2 = await fetchData1('http://3.89.137.230:8000/constcomment', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
         setBudgetData(data2.value);
-        const data3 = await fetchData1('http://localhost:8000/negcom', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
+        const data3 = await fetchData1('http://3.89.137.230:8000/negcom', { selectedInstructor, selectedCourses, selectedFrom, selectedTo });
         setTotalProfitData(data3.value);
       } 
     };
     const fetchDataForFromToinstructor = async () => {
       if (selectedInstructor && selectedFrom && selectedTo) {
-        const data = await fetchData1('http://localhost:8000/registeredstudents', { selectedInstructor, selectedFrom, selectedTo });
+        const data = await fetchData1('http://3.89.137.230:8000/registeredstudents', { selectedInstructor, selectedFrom, selectedTo });
         setTotalCustomersData(data.value);
-        const data1 = await fetchData1('http://localhost:8000/feedbacksrec', { selectedInstructor,  selectedFrom, selectedTo });
+        const data1 = await fetchData1('http://3.89.137.230:8000/feedbacksrec', { selectedInstructor,  selectedFrom, selectedTo });
         setTasksProgressData(data1.value);
-        const data2 = await fetchData1('http://localhost:8000/constcomment', { selectedInstructor,  selectedFrom, selectedTo });
+        const data2 = await fetchData1('http://3.89.137.230:8000/constcomment', { selectedInstructor,  selectedFrom, selectedTo });
         setBudgetData(data2.value);
-        const data3 = await fetchData1('http://localhost:8000/negcom', { selectedInstructor,  selectedFrom, selectedTo });
+        const data3 = await fetchData1('http://3.89.137.230:8000/negcom', { selectedInstructor,  selectedFrom, selectedTo });
         setTotalProfitData(data3.value);
       } 
     };
@@ -269,7 +269,7 @@ const Index = () => {
   
   useEffect(() => {
 
-      fetchDataa('http://localhost:8000/commentscategorywise').then((data) => {
+      fetchDataa('http://3.89.137.230:8000/commentscategorywise').then((data) => {
         if (data) {
           setChartData({
             positive: data.positive || [],
@@ -277,7 +277,7 @@ const Index = () => {
           });
         }
       });
-      fetchDataa('http://localhost:8000/course_analysis').then((data) => {
+      fetchDataa('http://3.89.137.230:8000/course_analysis').then((data) => {
         if (data) {
           setChartData1({
             positive: data.positive || [],
@@ -286,7 +286,7 @@ const Index = () => {
           });
         }
       });
-      fetchDataa('http://localhost:8000/years_of_teacher').then((data) => {
+      fetchDataa('http://3.89.137.230:8000/years_of_teacher').then((data) => {
         if (data) {
           setChartData2({
             positive: data.positive || [],

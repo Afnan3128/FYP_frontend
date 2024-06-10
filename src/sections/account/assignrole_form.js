@@ -26,7 +26,7 @@ const AssignForm = ({ open, handleClose }) => {
   const fetchData = async () => {
     try {
       // Fetch users
-      const usersResponse = await fetch('http://localhost:8000/assign_role_person');
+      const usersResponse = await fetch('http://3.89.137.230:8000/assign_role_person');
       if (usersResponse.ok) {
         const usersData = await usersResponse.json();
         setUsers(usersData.users_not_in_exclude_groups);
@@ -35,7 +35,7 @@ const AssignForm = ({ open, handleClose }) => {
       }
 
       // Fetch roles
-      const rolesResponse = await fetch('http://localhost:8000/assign_role');
+      const rolesResponse = await fetch('http://3.89.137.230:8000/assign_role');
       if (rolesResponse.ok) {
         const rolesData = await rolesResponse.json();
         setRoles(rolesData.roles);
@@ -62,7 +62,7 @@ const AssignForm = ({ open, handleClose }) => {
       return;
     }
     try {
-        const response = await fetch('http://localhost:8000/save_data', {
+        const response = await fetch('http://3.89.137.230:8000/save_data', {
           method: 'POST', // Or 'PUT', 'PATCH', etc. depending on your API
           headers: {
             'Content-Type': 'application/json',

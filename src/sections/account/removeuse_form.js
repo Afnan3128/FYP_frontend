@@ -22,7 +22,7 @@ const UserForm = ({ open, handleClose }) => {
         return;
       }
     try {
-        const response = await fetch('http://localhost:8000/deleteuser', {
+        const response = await fetch('http://3.89.137.230:8000/deleteuser', {
           method: 'POST', // Or 'PUT', 'PATCH', etc. depending on your API
           headers: {
             'Content-Type': 'application/json',

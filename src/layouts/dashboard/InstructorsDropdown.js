@@ -14,7 +14,7 @@ const InstructorDropdown = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8000/get_instructors');
+        const response = await fetch('http://3.89.137.230:8000/get_instructors');
         const data = await response.json();
         setInstructors(data.teachers_name);
         // setSelectedInstructor(auth.user.name);
@@ -41,7 +41,7 @@ const InstructorDropdown = () => {
     setSelectedInstructor(newSelectedInstructor);
     try {
       // Send the selected instructor to the server
-      const response = await axios.post('http://localhost:8000/setinstructor', {
+      const response = await axios.post('http://3.89.137.230:8000/setinstructor', {
         newSelectedInstructor
       });
 
@@ -51,7 +51,7 @@ const InstructorDropdown = () => {
 
     // try {
     //   // Send the selected instructor to the server
-    //   const response = await axios.post('http://localhost:8000/getcourses', {
+    //   const response = await axios.post('http://3.89.137.230:8000/getcourses', {
     //     selectedInstructor: newSelectedInstructor,
     //   });
 

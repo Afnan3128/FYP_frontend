@@ -18,7 +18,7 @@ const ToDropdown = () => {
     setSelectedTo('');
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/setToDropdown', {
+        const response = await axios.post('http://3.89.137.230:8000/setToDropdown', {
           selectedInstructor,
           // selectedSection,
           // selectedCourses,

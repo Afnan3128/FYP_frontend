@@ -33,7 +33,7 @@ const SectionDropdown = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/get_instructor_coursen', {
+      const response = await axios.post('http://3.89.137.230:8000/get_instructor_coursen', {
         selectedInstructor,
         selectedFrom,
         selectedTo,
@@ -49,7 +49,7 @@ const SectionDropdown = () => {
   //   const fetchData = async () => {
   //     if (selectedInstructor &&  selectedCourses) {
   //       try {
-  //         const response = await axios.post('http://localhost:8000/get_instructor_coursen', {
+  //         const response = await axios.post('http://3.89.137.230:8000/get_instructor_coursen', {
   //           selectedInstructor,
   //           selectedCourses
   //         });
@@ -73,7 +73,7 @@ const SectionDropdown = () => {
 
   const handleSectionChange = async (selectedSection) => {
     try {
-      const apiResponse = await axios.post('http://localhost:8000/setSection', {
+      const apiResponse = await axios.post('http://3.89.137.230:8000/setSection', {
         selectedSection,
       });
       // console.log(selectedSection)

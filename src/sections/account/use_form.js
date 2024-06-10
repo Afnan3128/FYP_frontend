@@ -28,7 +28,7 @@ const UserForm = ({ open, handleClose }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/createuser', {
+      const response = await fetch('http://3.89.137.230:8000/createuser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

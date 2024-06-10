@@ -36,7 +36,7 @@ export const TopNav = (props) => {
   useEffect(() => {
     // Fetch data from your backend API
     // Assuming you use fetch or axios for making API calls
-    fetch('http://localhost:8000/check_HOS', {
+    fetch('http://3.89.137.230:8000/check_HOS', {
       method: 'POST',
       body: JSON.stringify({ /* any data to send */ }),
       headers: {
@@ -56,7 +56,7 @@ export const TopNav = (props) => {
   }, []); 
   const handleButtonClick = () => {
     // Make a fetch request to localhost:8000/apisomehing
-    fetch('http://localhost:8000/uploadpdf', {
+    fetch('http://3.89.137.230:8000/uploadpdf', {
        // You can change the method as needed
       // Add headers if needed
     })

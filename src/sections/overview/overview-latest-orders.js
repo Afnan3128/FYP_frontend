@@ -37,7 +37,7 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
   // useEffect(() => {
   //   const fetchComments = async () => {
   //     try {
-  //       const response = await fetch('http://localhost:8000/getcomments');
+  //       const response = await fetch('http://3.89.137.230:8000/getcomments');
   //       const data = await response.json();
   //       setComments(data.comments_data);
   //     } catch (error) {
@@ -88,7 +88,7 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
     //  setSelectedTo('');
   }, [selectedTo]);
   useEffect(() => {
-    fetchData('http://localhost:8000/getcomments').then((value) => setComments(value.comments_data));   
+    fetchData('http://3.89.137.230:8000/getcomments').then((value) => setComments(value.comments_data));   
   }, []);
 
   useEffect(() => {
@@ -97,7 +97,7 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
       if (selectedInstructor) {
        
         // handleCatSelection({ target: { value: '' } });
-        const data = await fetchData('http://localhost:8000/getcomments', { selectedInstructor });
+        const data = await fetchData('http://3.89.137.230:8000/getcomments', { selectedInstructor });
         setComments(data.comments_data);
         // handleCatSelection({ target: { value: '' } });        
       } 
@@ -105,14 +105,14 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
   
     const fetchDataForCourses = async () => {
       if (selectedInstructor && selectedCourses) {
-        const data = await fetchData('http://localhost:8000/getcomments', { selectedInstructor, selectedCourses });
+        const data = await fetchData('http://3.89.137.230:8000/getcomments', { selectedInstructor, selectedCourses });
         setComments(data.comments_data);
        
       } 
     };
     const fetchDataForCoursesFromTo = async () => {
       if (selectedInstructor && selectedCourses && selectedFrom && selectedTo) {
-        const data = await fetchData('http://localhost:8000/getcomments', { selectedInstructor, selectedCourses ,selectedFrom, selectedTo});
+        const data = await fetchData('http://3.89.137.230:8000/getcomments', { selectedInstructor, selectedCourses ,selectedFrom, selectedTo});
         setComments(data.comments_data);
        
       } 
@@ -120,14 +120,14 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
   
     const fetchDataForFromTo = async () => {
       if (selectedInstructor && selectedFrom && selectedTo) {
-        const data = await fetchData('http://localhost:8000/getcomments', { selectedInstructor, selectedFrom, selectedTo });
+        const data = await fetchData('http://3.89.137.230:8000/getcomments', { selectedInstructor, selectedFrom, selectedTo });
         setComments(data.comments_data);
         
       } 
     };
     const fetchDataForFromToCourseSection = async () => {
       if (selectedInstructor && selectedCourses && selectedFrom && selectedTo && selectedSection) {
-        const data = await fetchData('http://localhost:8000/getcomments', { selectedInstructor, selectedFrom, selectedTo ,selectedCourses,selectedSection});
+        const data = await fetchData('http://3.89.137.230:8000/getcomments', { selectedInstructor, selectedFrom, selectedTo ,selectedCourses,selectedSection});
         setComments(data.comments_data);
         
       } 
@@ -150,7 +150,7 @@ const OverviewLatestOrders = ({ sx, selectedCategoryText }) => {
 
   const handleCatChange = async (selectedCategory) => {
     try {
-      const apiResponse = await axios.post('http://localhost:8000/setCategory', {
+      const apiResponse = await axios.post('http://3.89.137.230:8000/setCategory', {
         selectedCategory,
       });
       // Handle the response as needed

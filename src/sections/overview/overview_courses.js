@@ -43,7 +43,7 @@ const useChartOptions = (selectedInstructor) => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const data = await fetchDataa('http://localhost:8000/course_analysis');
+      const data = await fetchDataa('http://3.89.137.230:8000/course_analysis');
       setChartData({
         positive: data.positive || [],
         negative: data.negative || [],

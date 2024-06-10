@@ -9,7 +9,7 @@ const SemDropdown = ({ selectedCourses }) => {
 
   const handleCoursesChange = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/getcourses');
+      const response = await axios.get('http://3.89.137.230:8000/getcourses');
       const everything = response.data;
       setDepartments(everything.courses);
     } catch (error) {
@@ -20,11 +20,11 @@ const SemDropdown = ({ selectedCourses }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const instructorResponse = await axios.post('http://localhost:8000/getsemester', {
+        const instructorResponse = await axios.post('http://3.89.137.230:8000/getsemester', {
           selectedCourses,
         });
 
-        const response = await axios.get('http://localhost:8000/getsemester');
+        const response = await axios.get('http://3.89.137.230:8000/getsemester');
         const everything = response.data;
         setDepartments(everything.courses);
       } catch (error) {

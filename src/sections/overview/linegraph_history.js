@@ -44,7 +44,7 @@ const useChartOptionsb = async () => {
 
 // useEffect(() => {
 //   if (selectedInstructor || selectedCourses || selectedSection) {
-//   fetchDataa('http://localhost:8000/years_of_teacher').then((data) => {
+//   fetchDataa('http://3.89.137.230:8000/years_of_teacher').then((data) => {
 //     setChartData({
 //       positive: data.positive || [],
 //       negative: data.negative || [],
@@ -59,7 +59,7 @@ const useChartOptionsb = async () => {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const data = await fetchDataa('http://localhost:8000/years_of_teacher');
+      const data = await fetchDataa('http://3.89.137.230:8000/years_of_teacher');
       setChartData2({
         positive: data.positive || [],
         negative: data.negative || [],

@@ -17,7 +17,7 @@ const FromDropdown = () => {
     const fetchData = async () => {
       if (selectedInstructor ) {
         try {
-          const response = await axios.post('http://localhost:8000/setFromDropdown', {
+          const response = await axios.post('http://3.89.137.230:8000/setFromDropdown', {
             selectedInstructor,
             // selectedSection,
             // selectedCourses
